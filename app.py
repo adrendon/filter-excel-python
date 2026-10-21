@@ -143,7 +143,7 @@ with category_column:
         .rename_axis("Categoría")
         .reset_index(name="Proyectos")
     )
-    st.dataframe(category_counts, hide_index=True, use_container_width=True)
+    st.dataframe(category_counts, hide_index=True, width="stretch")
 
 st.subheader("Nombres de proyectos")
 if filtered.empty:
@@ -152,7 +152,7 @@ else:
     st.dataframe(
         filtered[["project_name"]].rename(columns={"project_name": "Proyecto"}),
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
     )
 
 with st.expander("Ver detalle de deuda e issues"):
@@ -169,5 +169,5 @@ with st.expander("Ver detalle de deuda e issues"):
             }
         ),
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
     )
